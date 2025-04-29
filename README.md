@@ -1,5 +1,7 @@
 # fabric.js Starter Template
 
+![](./thumbnail.png)
+
 Template for experimenting with fabric.js
 
 ## Development
