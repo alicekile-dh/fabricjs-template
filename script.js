@@ -11,16 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
   canvas.setWidth(CANVAS_WIDTH);
   canvas.setHeight(CANVAS_HEIGHT);
 
-  const demoImg = "https://fabricjs.github.io/assets/pug.jpg";
-
-  const radius = 200;
-
-  const group = new fabric.Group();
 
   const circle = new fabric.Circle({
     absolutePositioned: true,
     objectCaching: false,
-    radius,
+    radius: 200,
     left: CANVAS_WIDTH / 2,
     top: CANVAS_HEIGHT / 2,
     originX: "center",
@@ -28,20 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   canvas.add(circle);
-  fabric.Image.fromURL(demoImg).then((img) => {
-    img.set({
-      dirty: true,
-      scaleX: 0.4,
-      scaleY: 0.4,
-    });
-
-    img.clipPath = circle;
-
-    canvas.centerObject(img);
-
-    canvas.add(img);
-    canvas.setActiveObject(img);
-  });
 
   // Optional: log to console to confirm initialization
   console.log("fabric.js canvas initialized and objects added.");
